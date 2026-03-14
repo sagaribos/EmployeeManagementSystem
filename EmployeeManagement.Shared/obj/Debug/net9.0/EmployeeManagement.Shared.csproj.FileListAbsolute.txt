@@ -1,0 +1,12 @@
+C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement.Shared\bin\Debug\net9.0\EmployeeManagement.Shared.deps.json
+C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement.Shared\bin\Debug\net9.0\EmployeeManagement.Shared.dll
+C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement.Shared\bin\Debug\net9.0\EmployeeManagement.Shared.pdb
+C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement.Shared\obj\Debug\net9.0\EmployeeManagement.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement.Shared\obj\Debug\net9.0\EmployeeManagement.Shared.AssemblyInfoInputs.cache
+C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement.Shared\obj\Debug\net9.0\EmployeeManagement.Shared.AssemblyInfo.cs
+C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement.Shared\obj\Debug\net9.0\EmployeeManagement.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement.Shared\obj\Debug\net9.0\EmployeeManagement.Shared.dll
+C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement.Shared\obj\Debug\net9.0\refint\EmployeeManagement.Shared.dll
+C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement.Shared\obj\Debug\net9.0\EmployeeManagement.Shared.pdb
+C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement.Shared\obj\Debug\net9.0\ref\EmployeeManagement.Shared.dll
+C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement.Shared\obj\Debug\net9.0\EmployeeManagement.Shared.sourcelink.json

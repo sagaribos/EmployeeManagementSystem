@@ -1,3 +1,9 @@
 <Solution>
+  <Project Path="EmployeeManagement.Application/EmployeeManagement.Application.csproj" />
+  <Project Path="EmployeeManagement.Configuration/EmployeeManagement.Configuration.csproj" />
+  <Project Path="EmployeeManagement.Domain/EmployeeManagement.Domain.csproj" />
+  <Project Path="EmployeeManagement.Infrastructure/EmployeeManagement.Infrastructure.csproj" />
+  <Project Path="EmployeeManagement.Persistence/EmployeeManagement.Persistence.csproj" />
+  <Project Path="EmployeeManagement.Shared/EmployeeManagement.Shared.csproj" />
   <Project Path="EmployeeManagement.WebAPI/EmployeeManagement.WebAPI.csproj" />
 </Solution>
