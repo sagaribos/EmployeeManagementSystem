@@ -55,6 +55,7 @@ var app = builder.Build();
 
 // Exception Middleware
 app.UseMiddleware<AppMiddleware>();
+app.UseCors("AllowAll");
 
 if (app.Environment.IsDevelopment())
 {

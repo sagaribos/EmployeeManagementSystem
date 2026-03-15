@@ -1,12 +1,14 @@
-﻿using System.Net;
-using System.Security.Claims;
-using System.Text.Json;
-using EmployeeManagement.Application.Services.Interfaces;
+﻿using EmployeeManagement.Application.Services.Interfaces;
+using EmployeeManagement.Domain.Models;
 using EmployeeManagement.Persistence.Repositories.Interfaces;
 using EmployeeManagement.Shared.Exceptions;
 using EmployeeManagement.Shared.Responses;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using System.IdentityModel.Tokens.Jwt;
+using System.Net;
+using System.Security.Claims;
+using System.Text.Json;
 using AppValidationException =
     EmployeeManagement.Shared.Exceptions.ValidationException;
 
@@ -22,10 +24,10 @@ public class AppMiddleware
     }
 
     public async Task InvokeAsync(
-       HttpContext context,
-       ITokenRepository tokenRepository,
-       IUserRepository userRepository,
-       IAuditLogService auditLogService)
+        HttpContext context,
+        ITokenRepository tokenRepository,
+        IUserRepository userRepository,
+        IAuditLogService auditLogService)
     {
         try
         {
@@ -40,11 +42,12 @@ public class AppMiddleware
                 return;
             }
 
-            // Step 2 — Check token blacklist
+            // Step 2 — Get token from header
             var token = context.Request.Headers["Authorization"]
                 .ToString()
                 .Replace("Bearer ", "");
 
+            // Step 3 — Check token blacklist
             if (!string.IsNullOrEmpty(token))
             {
                 var isBlacklisted = await tokenRepository
@@ -58,29 +61,20 @@ public class AppMiddleware
                         "Token has been invalidated. Please login again.");
                     return;
                 }
-            }
 
-            // Step 3 — Check RBAC permissions
-            if (context.User.Identity?.IsAuthenticated == true)
-            {
-                var userId = context.User
-                    .FindFirstValue(ClaimTypes.NameIdentifier);
+                // Step 4 — Check RBAC permissions
+                var hasPermission = await CheckPermissionAsync(
+                    context,
+                    userRepository,
+                    token);
 
-                if (userId is not null)
+                if (!hasPermission)
                 {
-                    var hasPermission = await CheckPermissionAsync(
+                    await WriteResponseAsync(
                         context,
-                        userRepository,
-                        Guid.Parse(userId));
-
-                    if (!hasPermission)
-                    {
-                        await WriteResponseAsync(
-                            context,
-                            HttpStatusCode.Forbidden,
-                            "You do not have permission to access this resource.");
-                        return;
-                    }
+                        HttpStatusCode.Forbidden,
+                        "You do not have permission to access this resource.");
+                    return;
                 }
             }
 
@@ -130,22 +124,41 @@ public class AppMiddleware
     private static async Task<bool> CheckPermissionAsync(
         HttpContext context,
         IUserRepository userRepository,
-        Guid userId)
+        string token)
     {
-        var permissions = await userRepository
-            .GetUserPermissionsAsync(userId);
+        try
+        {
+            var handler = new JwtSecurityTokenHandler();
+            var jwtToken = handler.ReadJwtToken(token);
 
-        var requestPath = context.Request.Path.Value?
-            .TrimStart('/')
-            .ToLower();
+            var userId = jwtToken.Claims
+                .FirstOrDefault(c =>
+                    c.Type == ClaimTypes.NameIdentifier ||
+                    c.Type == "nameid" ||
+                    c.Type == "sub")?.Value;
 
-        var requestMethod = context.Request.Method.ToUpper();
+            if (userId is null)
+                return false;
 
-        return permissions.Any(p =>
-            requestPath != null &&
-            requestPath.StartsWith(
-                p.Endpoint.ToLower().TrimStart('/')) &&
-            p.HttpMethod.ToString().ToUpper() == requestMethod);
+            var permissions = await userRepository
+                .GetUserPermissionsAsync(Guid.Parse(userId));
+
+            var requestPath = context.Request.Path.Value?
+                .TrimStart('/')
+                .ToLower();
+
+            var requestMethod = context.Request.Method.ToUpper();
+
+            return permissions.Any(p =>
+                requestPath != null &&
+                requestPath.StartsWith(
+                    p.Endpoint.ToLower().TrimStart('/')) &&
+                p.HttpMethod.ToString().ToUpper() == requestMethod);
+        }
+        catch
+        {
+            return false;
+        }
     }
 
     private static async Task WriteResponseAsync(
