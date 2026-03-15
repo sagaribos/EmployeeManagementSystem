@@ -26,6 +26,9 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IEmployeeService, EmployeeService>();
         services.AddScoped<ISalaryService, SalaryService>();
         services.AddScoped<IReportService, ReportService>();
+        services.AddScoped<IRoleService, RoleService>();
+        services.AddScoped<IPermissionService, PermissionService>();
+        services.AddScoped<IUserManagementService, UserManagementService>();
 
         return services;
     }

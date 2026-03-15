@@ -2,6 +2,7 @@
 using EmployeeManagement.Application.DTOs.Request.Designation;
 using EmployeeManagement.Application.DTOs.Response.Designation;
 using EmployeeManagement.Application.Services.Interfaces;
+using EmployeeManagement.Application.Validators;
 using EmployeeManagement.Domain.Models;
 using EmployeeManagement.Persistence.UnitOfWork;
 using EmployeeManagement.Shared.Exceptions;
@@ -41,6 +42,13 @@ public class DesignationService : IDesignationService
 
     public async Task<DesignationResponse> CreateAsync(CreateDesignationRequest request)
     {
+        var validator = new CreateDesignationValidator();
+        var result = await validator.ValidateAsync(request);
+        if (!result.IsValid)
+            throw new Shared.Exceptions.ValidationException(
+                result.Errors.Select(e => e.ErrorMessage).ToList());
+
+        // rest of existing code stays same
         var department = await _unitOfWork.Departments.GetByIdAsync(request.DepartmentId);
         if (department is null)
             throw new NotFoundException($"Department with id {request.DepartmentId} not found");
@@ -54,13 +62,21 @@ public class DesignationService : IDesignationService
         await _unitOfWork.Designations.AddAsync(designation);
         await _unitOfWork.SaveChangesAsync();
 
-        await _auditLogService.LogAsync("CREATE", "Designation", "System", $"Created designation {designation.Title}");
+        await _auditLogService.LogAsync("CREATE", "Designation", "System",
+            $"Created designation {designation.Title}");
 
         return _mapper.Map<DesignationResponse>(designation);
     }
 
     public async Task<DesignationResponse> UpdateAsync(Guid id, UpdateDesignationRequest request)
     {
+        var validator = new UpdateDesignationValidator();
+        var result = await validator.ValidateAsync(request);
+        if (!result.IsValid)
+            throw new Shared.Exceptions.ValidationException(
+                result.Errors.Select(e => e.ErrorMessage).ToList());
+
+        // rest of existing code stays same
         var designation = await _unitOfWork.Designations.GetByIdAsync(id);
         if (designation is null)
             throw new NotFoundException($"Designation with id {id} not found");
@@ -71,7 +87,8 @@ public class DesignationService : IDesignationService
         _unitOfWork.Designations.Update(designation);
         await _unitOfWork.SaveChangesAsync();
 
-        await _auditLogService.LogAsync("UPDATE", "Designation", "System", $"Updated designation {designation.Title}");
+        await _auditLogService.LogAsync("UPDATE", "Designation", "System",
+            $"Updated designation {designation.Title}");
 
         return _mapper.Map<DesignationResponse>(designation);
     }

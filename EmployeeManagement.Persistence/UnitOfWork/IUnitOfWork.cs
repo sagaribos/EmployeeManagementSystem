@@ -10,5 +10,7 @@ public interface IUnitOfWork : IDisposable
     ISalaryRepository Salaries { get; }
     IUserRepository Users { get; }
     ITokenRepository Tokens { get; }
+    IRoleRepository Roles { get; }               
+    IPermissionRepository Permissions { get; }  
     Task<int> SaveChangesAsync();
 }

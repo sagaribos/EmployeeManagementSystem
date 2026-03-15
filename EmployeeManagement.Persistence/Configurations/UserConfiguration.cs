@@ -23,5 +23,12 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(u => u.PasswordHash)
             .IsRequired();
+
+        // Optional link to Employee
+        builder.HasOne(u => u.Employee)
+            .WithOne()
+            .HasForeignKey<User>(u => u.EmployeeId)
+            .IsRequired(false)
+            .OnDelete(DeleteBehavior.SetNull);
     }
 }

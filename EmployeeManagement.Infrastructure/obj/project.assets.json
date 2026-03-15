@@ -2871,6 +2871,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "AutoMapper >= 13.0.1",
       "BCrypt.Net-Next >= 4.1.0",
       "EmployeeManagement.Application >= 1.0.0",
       "EmployeeManagement.Domain >= 1.0.0",
@@ -2888,11 +2889,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Infrastructure\\EmployeeManagement.Infrastructure.csproj",
+      "projectUniqueName": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Infrastructure\\EmployeeManagement.Infrastructure.csproj",
       "projectName": "EmployeeManagement.Infrastructure",
-      "projectPath": "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Infrastructure\\EmployeeManagement.Infrastructure.csproj",
+      "projectPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Infrastructure\\EmployeeManagement.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Sagar-564699\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Infrastructure\\obj\\",
+      "outputPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2913,17 +2914,17 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Application\\EmployeeManagement.Application.csproj": {
-              "projectPath": "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Application\\EmployeeManagement.Application.csproj"
+            "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Application\\EmployeeManagement.Application.csproj": {
+              "projectPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Application\\EmployeeManagement.Application.csproj"
             },
-            "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj": {
-              "projectPath": "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj"
+            "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj": {
+              "projectPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj"
             },
-            "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Persistence\\EmployeeManagement.Persistence.csproj": {
-              "projectPath": "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Persistence\\EmployeeManagement.Persistence.csproj"
+            "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Persistence\\EmployeeManagement.Persistence.csproj": {
+              "projectPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Persistence\\EmployeeManagement.Persistence.csproj"
             },
-            "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj": {
-              "projectPath": "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj"
+            "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj": {
+              "projectPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj"
             }
           }
         }
@@ -2944,6 +2945,10 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          },
           "BCrypt.Net-Next": {
             "target": "Package",
             "version": "[4.1.0, )"
@@ -2980,5 +2985,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'AutoMapper' 13.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-rvv3-g6hj-g44x",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
 }

@@ -22,3 +22,27 @@ C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement
 C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement.Configuration\obj\Debug\net9.0\refint\EmployeeManagement.Configuration.dll
 C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement.Configuration\obj\Debug\net9.0\EmployeeManagement.Configuration.pdb
 C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement.Configuration\obj\Debug\net9.0\ref\EmployeeManagement.Configuration.dll
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\obj\Debug\net9.0\EmployeeManagement.Configuration.csproj.AssemblyReference.cache
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\obj\Debug\net9.0\EmployeeManagement.Configuration.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\obj\Debug\net9.0\EmployeeManagement.Configuration.AssemblyInfoInputs.cache
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\obj\Debug\net9.0\EmployeeManagement.Configuration.AssemblyInfo.cs
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\obj\Debug\net9.0\EmployeeManagement.Configuration.csproj.CoreCompileInputs.cache
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\obj\Debug\net9.0\EmployeeManagement.Configuration.sourcelink.json
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\obj\Debug\net9.0\EmployeeManagement.Configuration.dll
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\obj\Debug\net9.0\refint\EmployeeManagement.Configuration.dll
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\obj\Debug\net9.0\EmployeeManagement.Configuration.pdb
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\bin\Debug\net9.0\EmployeeManagement.Configuration.deps.json
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\bin\Debug\net9.0\EmployeeManagement.Configuration.dll
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\bin\Debug\net9.0\EmployeeManagement.Configuration.pdb
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\bin\Debug\net9.0\EmployeeManagement.Application.dll
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\bin\Debug\net9.0\EmployeeManagement.Domain.dll
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\bin\Debug\net9.0\EmployeeManagement.Infrastructure.dll
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\bin\Debug\net9.0\EmployeeManagement.Persistence.dll
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\bin\Debug\net9.0\EmployeeManagement.Shared.dll
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\bin\Debug\net9.0\EmployeeManagement.Application.pdb
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\bin\Debug\net9.0\EmployeeManagement.Infrastructure.pdb
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\bin\Debug\net9.0\EmployeeManagement.Persistence.pdb
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\bin\Debug\net9.0\EmployeeManagement.Shared.pdb
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\bin\Debug\net9.0\EmployeeManagement.Domain.pdb
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\obj\Debug\net9.0\Employee.4F8EAE20.Up2Date
+D:\Projects\EmployeeManagement\EmployeeManagement.Configuration\obj\Debug\net9.0\ref\EmployeeManagement.Configuration.dll

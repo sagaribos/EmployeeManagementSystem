@@ -1,8 +1,7 @@
 ﻿using EmployeeManagement.Persistence.DbContext;
 using EmployeeManagement.Persistence.Repositories.Implementations;
 using EmployeeManagement.Persistence.Repositories.Interfaces;
-
-namespace EmployeeManagement.Persistence.UnitOfWork;
+using EmployeeManagement.Persistence.UnitOfWork;
 
 public class UnitOfWork : IUnitOfWork
 {
@@ -14,6 +13,8 @@ public class UnitOfWork : IUnitOfWork
     public ISalaryRepository Salaries { get; }
     public IUserRepository Users { get; }
     public ITokenRepository Tokens { get; }
+    public IRoleRepository Roles { get; }               
+    public IPermissionRepository Permissions { get; }   
 
     public UnitOfWork(AppDbContext context)
     {
@@ -24,6 +25,8 @@ public class UnitOfWork : IUnitOfWork
         Salaries = new SalaryRepository(context);
         Users = new UserRepository(context);
         Tokens = new TokenRepository(context);
+        Roles = new RoleRepository(context);              
+        Permissions = new PermissionRepository(context);   
     }
 
     public async Task<int> SaveChangesAsync()

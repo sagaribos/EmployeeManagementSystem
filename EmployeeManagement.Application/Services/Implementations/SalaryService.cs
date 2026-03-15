@@ -2,6 +2,7 @@
 using EmployeeManagement.Application.DTOs.Request.Salary;
 using EmployeeManagement.Application.DTOs.Response.Salary;
 using EmployeeManagement.Application.Services.Interfaces;
+using EmployeeManagement.Application.Validators;
 using EmployeeManagement.Domain.Enums;
 using EmployeeManagement.Domain.Models;
 using EmployeeManagement.Persistence.UnitOfWork;
@@ -27,6 +28,13 @@ public class SalaryService : ISalaryService
 
     public async Task<SalaryDisbursementResponse> DisburseAsync(SalaryDisbursementRequest request)
     {
+        var validator = new SalaryDisbursementValidator();
+        var result = await validator.ValidateAsync(request);
+        if (!result.IsValid)
+            throw new Shared.Exceptions.ValidationException(
+                result.Errors.Select(e => e.ErrorMessage).ToList());
+
+        // rest of existing code stays same
         var employee = await _unitOfWork.Employees.GetByIdAsync(request.EmployeeId);
         if (employee is null)
             throw new NotFoundException($"Employee with id {request.EmployeeId} not found");
@@ -34,7 +42,8 @@ public class SalaryService : ISalaryService
         var alreadyDisbursed = await _unitOfWork.Salaries.AlreadyDisbursedAsync(
             request.EmployeeId, request.Month, request.Year);
         if (alreadyDisbursed)
-            throw new ConflictException($"Salary already disbursed for this employee for {request.Month}/{request.Year}");
+            throw new ConflictException(
+                $"Salary already disbursed for this employee for {request.Month}/{request.Year}");
 
         var totalAmount = employee.BaseSalary + (request.Adjustment ?? 0);
 

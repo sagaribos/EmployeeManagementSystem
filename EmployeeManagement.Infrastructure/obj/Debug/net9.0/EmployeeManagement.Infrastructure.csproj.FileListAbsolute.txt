@@ -20,3 +20,25 @@ C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement
 C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement.Infrastructure\obj\Debug\net9.0\refint\EmployeeManagement.Infrastructure.dll
 C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement.Infrastructure\obj\Debug\net9.0\EmployeeManagement.Infrastructure.pdb
 C:\Users\Sagar-564699\Personal Projects\C#\EmployeeManagement\EmployeeManagement.Infrastructure\obj\Debug\net9.0\ref\EmployeeManagement.Infrastructure.dll
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\bin\Debug\net9.0\EmployeeManagement.Infrastructure.deps.json
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\bin\Debug\net9.0\EmployeeManagement.Infrastructure.dll
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\bin\Debug\net9.0\EmployeeManagement.Infrastructure.pdb
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\bin\Debug\net9.0\EmployeeManagement.Application.dll
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\bin\Debug\net9.0\EmployeeManagement.Domain.dll
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\bin\Debug\net9.0\EmployeeManagement.Persistence.dll
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\bin\Debug\net9.0\EmployeeManagement.Shared.dll
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\bin\Debug\net9.0\EmployeeManagement.Application.pdb
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\bin\Debug\net9.0\EmployeeManagement.Domain.pdb
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\bin\Debug\net9.0\EmployeeManagement.Persistence.pdb
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\bin\Debug\net9.0\EmployeeManagement.Shared.pdb
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\obj\Debug\net9.0\EmployeeManagement.Infrastructure.csproj.AssemblyReference.cache
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\obj\Debug\net9.0\EmployeeManagement.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\obj\Debug\net9.0\EmployeeManagement.Infrastructure.AssemblyInfoInputs.cache
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\obj\Debug\net9.0\EmployeeManagement.Infrastructure.AssemblyInfo.cs
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\obj\Debug\net9.0\EmployeeManagement.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\obj\Debug\net9.0\EmployeeManagement.Infrastructure.sourcelink.json
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\obj\Debug\net9.0\Employee.66F3489C.Up2Date
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\obj\Debug\net9.0\EmployeeManagement.Infrastructure.dll
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\obj\Debug\net9.0\refint\EmployeeManagement.Infrastructure.dll
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\obj\Debug\net9.0\EmployeeManagement.Infrastructure.pdb
+D:\Projects\EmployeeManagement\EmployeeManagement.Infrastructure\obj\Debug\net9.0\ref\EmployeeManagement.Infrastructure.dll

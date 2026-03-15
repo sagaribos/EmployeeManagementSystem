@@ -1088,6 +1088,7 @@
       },
       "EmployeeManagement.Infrastructure/1.0.0": {
         "dependencies": {
+          "AutoMapper": "13.0.1",
           "BCrypt.Net-Next": "4.1.0",
           "EmployeeManagement.Application": "1.0.0",
           "EmployeeManagement.Domain": "1.0.0",

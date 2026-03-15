@@ -26,14 +26,20 @@ public class AppDbContext : Microsoft.EntityFrameworkCore.DbContext
         base.OnModelCreating(modelBuilder);
     }
 
-    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    public override Task<int> SaveChangesAsync(
+        CancellationToken cancellationToken = default)
     {
         foreach (var entry in ChangeTracker.Entries<Domain.Common.BaseEntity>())
         {
             if (entry.State == EntityState.Added)
             {
+                // Only set Id if not already set
+                if (entry.Entity.Id == Guid.Empty)
+                {
+                    entry.Entity.Id = Guid.NewGuid();
+                }
+
                 entry.Entity.CreatedAt = DateTime.UtcNow;
-                entry.Entity.Id = Guid.NewGuid();
             }
 
             if (entry.State == EntityState.Modified)

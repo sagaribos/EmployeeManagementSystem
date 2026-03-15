@@ -287,6 +287,9 @@ namespace EmployeeManagement.Persistence.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
+                    b.Property<Guid?>("EmployeeId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -303,6 +306,10 @@ namespace EmployeeManagement.Persistence.Migrations
 
                     b.HasIndex("Email")
                         .IsUnique();
+
+                    b.HasIndex("EmployeeId")
+                        .IsUnique()
+                        .HasFilter("[EmployeeId] IS NOT NULL");
 
                     b.ToTable("Users");
                 });
@@ -378,6 +385,16 @@ namespace EmployeeManagement.Persistence.Migrations
                         .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("EmployeeManagement.Domain.Models.User", b =>
+                {
+                    b.HasOne("EmployeeManagement.Domain.Models.Employee", "Employee")
+                        .WithOne()
+                        .HasForeignKey("EmployeeManagement.Domain.Models.User", "EmployeeId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Employee");
                 });

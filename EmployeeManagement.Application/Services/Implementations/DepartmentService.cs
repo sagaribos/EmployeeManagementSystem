@@ -2,6 +2,7 @@
 using EmployeeManagement.Application.DTOs.Request.Department;
 using EmployeeManagement.Application.DTOs.Response.Department;
 using EmployeeManagement.Application.Services.Interfaces;
+using EmployeeManagement.Application.Validators;
 using EmployeeManagement.Domain.Models;
 using EmployeeManagement.Persistence.UnitOfWork;
 using EmployeeManagement.Shared.Exceptions;
@@ -41,6 +42,13 @@ public class DepartmentService : IDepartmentService
 
     public async Task<DepartmentResponse> CreateAsync(CreateDepartmentRequest request)
     {
+        var validator = new CreateDepartmentValidator();
+        var result = await validator.ValidateAsync(request);
+        if (!result.IsValid)
+            throw new Shared.Exceptions.ValidationException(
+                result.Errors.Select(e => e.ErrorMessage).ToList());
+
+        // rest of existing code stays same
         var existing = await _unitOfWork.Departments.GetByNameAsync(request.Name);
         if (existing is not null)
             throw new ConflictException($"Department {request.Name} already exists");
@@ -54,13 +62,21 @@ public class DepartmentService : IDepartmentService
         await _unitOfWork.Departments.AddAsync(department);
         await _unitOfWork.SaveChangesAsync();
 
-        await _auditLogService.LogAsync("CREATE", "Department", "System", $"Created department {department.Name}");
+        await _auditLogService.LogAsync("CREATE", "Department", "System",
+            $"Created department {department.Name}");
 
         return _mapper.Map<DepartmentResponse>(department);
     }
 
     public async Task<DepartmentResponse> UpdateAsync(Guid id, UpdateDepartmentRequest request)
     {
+        var validator = new UpdateDepartmentValidator();
+        var result = await validator.ValidateAsync(request);
+        if (!result.IsValid)
+            throw new Shared.Exceptions.ValidationException(
+                result.Errors.Select(e => e.ErrorMessage).ToList());
+
+        // rest of existing code stays same
         var department = await _unitOfWork.Departments.GetByIdAsync(id);
         if (department is null)
             throw new NotFoundException($"Department with id {id} not found");
@@ -71,7 +87,8 @@ public class DepartmentService : IDepartmentService
         _unitOfWork.Departments.Update(department);
         await _unitOfWork.SaveChangesAsync();
 
-        await _auditLogService.LogAsync("UPDATE", "Department", "System", $"Updated department {department.Name}");
+        await _auditLogService.LogAsync("UPDATE", "Department", "System",
+            $"Updated department {department.Name}");
 
         return _mapper.Map<DepartmentResponse>(department);
     }

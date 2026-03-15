@@ -1,6 +1,7 @@
 ﻿using EmployeeManagement.Application.DTOs.Response.Report;
 using EmployeeManagement.Application.Services.Interfaces;
 using EmployeeManagement.Persistence.UnitOfWork;
+using EmployeeManagement.Shared.Exceptions;
 
 namespace EmployeeManagement.Application.Services.Implementations;
 
@@ -52,4 +53,31 @@ public class ReportService : IReportService
         var salaries = await _unitOfWork.Salaries.GetByMonthAndYearAsync(month, year);
         return salaries.Sum(s => s.Amount);
     }
+
+    public async Task<IEnumerable<EmployeeSalaryHistoryResponse>> GetEmployeeSalaryHistoryAsync(
+    Guid employeeId)
+    {
+        var employee = await _unitOfWork.Employees.GetByIdAsync(employeeId);
+        if (employee is null)
+            throw new NotFoundException($"Employee with id {employeeId} not found");
+
+        var salaries = await _unitOfWork.Salaries.GetByEmployeeIdAsync(employeeId);
+
+        return salaries.Select(s => new EmployeeSalaryHistoryResponse
+        {
+            EmployeeId = employee.Id,
+            EmployeeName = employee.FirstName + " " + employee.LastName,
+            DepartmentName = employee.Department.Name,
+            DesignationTitle = employee.Designation.Title,
+            Month = s.Month,
+            Year = s.Year,
+            Amount = s.Amount,
+            Adjustment = s.Adjustment,
+            Status = s.Status,
+            DisbursedAt = s.DisbursedAt
+        }).OrderByDescending(s => s.Year)
+          .ThenByDescending(s => s.Month)
+          .ToList();
+    }
+
 }

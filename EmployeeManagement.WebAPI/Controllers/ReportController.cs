@@ -37,4 +37,11 @@ public class ReportController : ControllerBase
         var result = await _reportService.GetTotalDisbursedAsync(month, year);
         return Ok(ResponseHelper.Success(result, "Total disbursed retrieved successfully"));
     }
+
+    [HttpGet("employee-salary-history/{employeeId}")]
+    public async Task<IActionResult> GetEmployeeSalaryHistory(Guid employeeId)
+    {
+        var result = await _reportService.GetEmployeeSalaryHistoryAsync(employeeId);
+        return Ok(ResponseHelper.Success(result, "Employee salary history retrieved successfully"));
+    }
 }

@@ -3,4 +3,5 @@
 public interface IAuditLogService
 {
     Task LogAsync(string action, string entityName, string performedBy, string details);
+    Task LogErrorAsync(string message, string stackTrace, string path);
 }

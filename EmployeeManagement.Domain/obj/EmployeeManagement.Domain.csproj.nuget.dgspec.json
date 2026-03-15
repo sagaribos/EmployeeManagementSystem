@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj": {}
+    "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj": {
+    "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj",
+        "projectUniqueName": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj",
         "projectName": "EmployeeManagement.Domain",
-        "projectPath": "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj",
+        "projectPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj",
         "packagesPath": "C:\\Users\\Sagar-564699\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Domain\\obj\\",
+        "outputPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

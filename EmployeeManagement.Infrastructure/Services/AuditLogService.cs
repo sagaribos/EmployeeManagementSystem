@@ -32,4 +32,23 @@ public class AuditLogService : IAuditLogService
         await _logDbContext.AuditLogs.AddAsync(log);
         await _logDbContext.SaveChangesAsync();
     }
+
+    public async Task LogErrorAsync(
+        string message,
+        string stackTrace,
+        string path)
+    {
+        var log = new AuditLog
+        {
+            Id = Guid.NewGuid(),
+            Action = "ERROR",
+            EntityName = "System",
+            PerformedBy = "System",
+            Details = $"Path: {path} | Message: {message} | StackTrace: {stackTrace}",
+            PerformedAt = DateTime.UtcNow
+        };
+
+        await _logDbContext.AuditLogs.AddAsync(log);
+        await _logDbContext.SaveChangesAsync();
+    }
 }

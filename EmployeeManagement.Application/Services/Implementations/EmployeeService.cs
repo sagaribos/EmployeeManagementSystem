@@ -2,6 +2,7 @@
 using EmployeeManagement.Application.DTOs.Request.Employee;
 using EmployeeManagement.Application.DTOs.Response.Employee;
 using EmployeeManagement.Application.Services.Interfaces;
+using EmployeeManagement.Application.Validators;
 using EmployeeManagement.Domain.Enums;
 using EmployeeManagement.Domain.Models;
 using EmployeeManagement.Persistence.UnitOfWork;
@@ -42,6 +43,13 @@ public class EmployeeService : IEmployeeService
 
     public async Task<EmployeeResponse> CreateAsync(CreateEmployeeRequest request)
     {
+        var validator = new CreateEmployeeValidator();
+        var result = await validator.ValidateAsync(request);
+        if (!result.IsValid)
+            throw new Shared.Exceptions.ValidationException(
+                result.Errors.Select(e => e.ErrorMessage).ToList());
+
+        // rest of existing code stays same
         var existing = await _unitOfWork.Employees.GetByEmailAsync(request.Email);
         if (existing is not null)
             throw new ConflictException($"Employee with email {request.Email} already exists");
@@ -71,13 +79,21 @@ public class EmployeeService : IEmployeeService
         await _unitOfWork.Employees.AddAsync(employee);
         await _unitOfWork.SaveChangesAsync();
 
-        await _auditLogService.LogAsync("CREATE", "Employee", "System", $"Created employee {employee.Email}");
+        await _auditLogService.LogAsync("CREATE", "Employee", "System",
+            $"Created employee {employee.Email}");
 
         return _mapper.Map<EmployeeResponse>(employee);
     }
 
     public async Task<EmployeeResponse> UpdateAsync(Guid id, UpdateEmployeeRequest request)
     {
+        var validator = new UpdateEmployeeValidator();
+        var result = await validator.ValidateAsync(request);
+        if (!result.IsValid)
+            throw new Shared.Exceptions.ValidationException(
+                result.Errors.Select(e => e.ErrorMessage).ToList());
+
+        // rest of existing code stays same
         var employee = await _unitOfWork.Employees.GetByIdAsync(id);
         if (employee is null)
             throw new NotFoundException($"Employee with id {id} not found");
@@ -93,7 +109,8 @@ public class EmployeeService : IEmployeeService
         _unitOfWork.Employees.Update(employee);
         await _unitOfWork.SaveChangesAsync();
 
-        await _auditLogService.LogAsync("UPDATE", "Employee", "System", $"Updated employee {employee.Email}");
+        await _auditLogService.LogAsync("UPDATE", "Employee", "System",
+            $"Updated employee {employee.Email}");
 
         return _mapper.Map<EmployeeResponse>(employee);
     }

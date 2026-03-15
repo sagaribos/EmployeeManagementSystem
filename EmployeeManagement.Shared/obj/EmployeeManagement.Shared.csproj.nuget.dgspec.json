@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj": {}
+    "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj": {
+    "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj",
+        "projectUniqueName": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj",
         "projectName": "EmployeeManagement.Shared",
-        "projectPath": "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj",
+        "projectPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj",
         "packagesPath": "C:\\Users\\Sagar-564699\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sagar-564699\\Personal Projects\\C#\\EmployeeManagement\\EmployeeManagement.Shared\\obj\\",
+        "outputPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

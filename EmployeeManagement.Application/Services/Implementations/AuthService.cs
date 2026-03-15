@@ -2,6 +2,7 @@
 using EmployeeManagement.Application.DTOs.Request.Auth;
 using EmployeeManagement.Application.DTOs.Response.Auth;
 using EmployeeManagement.Application.Services.Interfaces;
+using EmployeeManagement.Application.Validators;
 using EmployeeManagement.Domain.Models;
 using EmployeeManagement.Persistence.UnitOfWork;
 using EmployeeManagement.Shared.Exceptions;
@@ -26,6 +27,14 @@ public class AuthService : IAuthService
 
     public async Task<LoginResponse> LoginAsync(LoginRequest request)
     {
+        // Add validation
+        var validator = new LoginRequestValidator();
+        var result = await validator.ValidateAsync(request);
+        if (!result.IsValid)
+            throw new Shared.Exceptions.ValidationException(
+                result.Errors.Select(e => e.ErrorMessage).ToList());
+
+        // rest of existing code stays same
         var user = await _unitOfWork.Users.GetByEmailAsync(request.Email);
         if (user is null)
             throw new NotFoundException("Invalid email or password");

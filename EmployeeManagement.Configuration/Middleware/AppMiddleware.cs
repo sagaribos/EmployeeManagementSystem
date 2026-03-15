@@ -1,10 +1,14 @@
 ﻿using System.Net;
+using System.Security.Claims;
 using System.Text.Json;
+using EmployeeManagement.Application.Services.Interfaces;
 using EmployeeManagement.Persistence.Repositories.Interfaces;
 using EmployeeManagement.Shared.Exceptions;
 using EmployeeManagement.Shared.Responses;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using AppValidationException =
+    EmployeeManagement.Shared.Exceptions.ValidationException;
 
 namespace EmployeeManagement.Configuration.Middleware;
 
@@ -17,15 +21,26 @@ public class AppMiddleware
         _next = next;
     }
 
-    public async Task InvokeAsync(HttpContext context, ITokenRepository tokenRepository)
+    public async Task InvokeAsync(
+       HttpContext context,
+       ITokenRepository tokenRepository,
+       IUserRepository userRepository,
+       IAuditLogService auditLogService)
     {
-        // Step 1 — Check blacklist unless endpoint is [AllowAnonymous]
-        var endpoint = context.GetEndpoint();
-        var allowAnonymous = endpoint?.Metadata
-            .GetMetadata<IAllowAnonymous>();
-
-        if (allowAnonymous is null)
+        try
         {
+            // Step 1 — Check if endpoint is public
+            var endpoint = context.GetEndpoint();
+            var allowAnonymous = endpoint?.Metadata
+                .GetMetadata<IAllowAnonymous>();
+
+            if (allowAnonymous is not null)
+            {
+                await _next(context);
+                return;
+            }
+
+            // Step 2 — Check token blacklist
             var token = context.Request.Headers["Authorization"]
                 .ToString()
                 .Replace("Bearer ", "");
@@ -44,11 +59,31 @@ public class AppMiddleware
                     return;
                 }
             }
-        }
 
-        // Step 2 — Handle all exceptions globally
-        try
-        {
+            // Step 3 — Check RBAC permissions
+            if (context.User.Identity?.IsAuthenticated == true)
+            {
+                var userId = context.User
+                    .FindFirstValue(ClaimTypes.NameIdentifier);
+
+                if (userId is not null)
+                {
+                    var hasPermission = await CheckPermissionAsync(
+                        context,
+                        userRepository,
+                        Guid.Parse(userId));
+
+                    if (!hasPermission)
+                    {
+                        await WriteResponseAsync(
+                            context,
+                            HttpStatusCode.Forbidden,
+                            "You do not have permission to access this resource.");
+                        return;
+                    }
+                }
+            }
+
             await _next(context);
         }
         catch (NotFoundException ex)
@@ -72,7 +107,7 @@ public class AppMiddleware
                 HttpStatusCode.Unauthorized,
                 ex.Message);
         }
-        catch (Shared.Exceptions.ValidationException ex)
+        catch (AppValidationException ex)
         {
             await WriteValidationResponseAsync(
                 context,
@@ -80,11 +115,37 @@ public class AppMiddleware
         }
         catch (Exception ex)
         {
+            await auditLogService.LogErrorAsync(
+                ex.Message,
+                ex.StackTrace ?? string.Empty,
+                context.Request.Path);
+
             await WriteResponseAsync(
                 context,
                 HttpStatusCode.InternalServerError,
-                ex.Message);
+                "An unexpected error occurred.");
         }
+    }
+
+    private static async Task<bool> CheckPermissionAsync(
+        HttpContext context,
+        IUserRepository userRepository,
+        Guid userId)
+    {
+        var permissions = await userRepository
+            .GetUserPermissionsAsync(userId);
+
+        var requestPath = context.Request.Path.Value?
+            .TrimStart('/')
+            .ToLower();
+
+        var requestMethod = context.Request.Method.ToUpper();
+
+        return permissions.Any(p =>
+            requestPath != null &&
+            requestPath.StartsWith(
+                p.Endpoint.ToLower().TrimStart('/')) &&
+            p.HttpMethod.ToString().ToUpper() == requestMethod);
     }
 
     private static async Task WriteResponseAsync(
