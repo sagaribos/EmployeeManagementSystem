@@ -1,45 +1,40 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Application\\EmployeeManagement.Application.csproj": {}
+    "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Application/EmployeeManagement.Application.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Application\\EmployeeManagement.Application.csproj": {
+    "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Application/EmployeeManagement.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Application\\EmployeeManagement.Application.csproj",
+        "projectUniqueName": "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Application/EmployeeManagement.Application.csproj",
         "projectName": "EmployeeManagement.Application",
-        "projectPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Application\\EmployeeManagement.Application.csproj",
-        "packagesPath": "C:\\Users\\Sagar-564699\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Application\\obj\\",
+        "projectPath": "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Application/EmployeeManagement.Application.csproj",
+        "packagesPath": "/home/mosfik/.nuget/packages/",
+        "outputPath": "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Application/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Sagar-564699\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/mosfik/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj": {
-                "projectPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj"
+              "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Domain/EmployeeManagement.Domain.csproj": {
+                "projectPath": "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Domain/EmployeeManagement.Domain.csproj"
               },
-              "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Persistence\\EmployeeManagement.Persistence.csproj": {
-                "projectPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Persistence\\EmployeeManagement.Persistence.csproj"
+              "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Persistence/EmployeeManagement.Persistence.csproj": {
+                "projectPath": "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Persistence/EmployeeManagement.Persistence.csproj"
               },
-              "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj": {
-                "projectPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj"
+              "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Shared/EmployeeManagement.Shared.csproj": {
+                "projectPath": "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Shared/EmployeeManagement.Shared.csproj"
               }
             }
           }
@@ -54,7 +49,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -105,32 +100,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.114/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj": {
+    "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Domain/EmployeeManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj",
+        "projectUniqueName": "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Domain/EmployeeManagement.Domain.csproj",
         "projectName": "EmployeeManagement.Domain",
-        "projectPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj",
-        "packagesPath": "C:\\Users\\Sagar-564699\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Domain\\obj\\",
+        "projectPath": "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Domain/EmployeeManagement.Domain.csproj",
+        "packagesPath": "/home/mosfik/.nuget/packages/",
+        "outputPath": "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Domain/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Sagar-564699\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/mosfik/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -149,7 +139,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -170,43 +160,38 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.114/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Persistence\\EmployeeManagement.Persistence.csproj": {
+    "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Persistence/EmployeeManagement.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Persistence\\EmployeeManagement.Persistence.csproj",
+        "projectUniqueName": "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Persistence/EmployeeManagement.Persistence.csproj",
         "projectName": "EmployeeManagement.Persistence",
-        "projectPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Persistence\\EmployeeManagement.Persistence.csproj",
-        "packagesPath": "C:\\Users\\Sagar-564699\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Persistence\\obj\\",
+        "projectPath": "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Persistence/EmployeeManagement.Persistence.csproj",
+        "packagesPath": "/home/mosfik/.nuget/packages/",
+        "outputPath": "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Persistence/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Sagar-564699\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/mosfik/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj": {
-                "projectPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Domain\\EmployeeManagement.Domain.csproj"
+              "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Domain/EmployeeManagement.Domain.csproj": {
+                "projectPath": "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Domain/EmployeeManagement.Domain.csproj"
               },
-              "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj": {
-                "projectPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj"
+              "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Shared/EmployeeManagement.Shared.csproj": {
+                "projectPath": "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Shared/EmployeeManagement.Shared.csproj"
               }
             }
           }
@@ -221,7 +206,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -272,32 +257,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.114/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj": {
+    "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Shared/EmployeeManagement.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj",
+        "projectUniqueName": "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Shared/EmployeeManagement.Shared.csproj",
         "projectName": "EmployeeManagement.Shared",
-        "projectPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Shared\\EmployeeManagement.Shared.csproj",
-        "packagesPath": "C:\\Users\\Sagar-564699\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\EmployeeManagement\\EmployeeManagement.Shared\\obj\\",
+        "projectPath": "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Shared/EmployeeManagement.Shared.csproj",
+        "packagesPath": "/home/mosfik/.nuget/packages/",
+        "outputPath": "/home/mosfik/Office/New-Member-Task/Sagar/EmployeeManagementSystem/EmployeeManagement.Shared/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Sagar-564699\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/mosfik/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -316,7 +296,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -337,7 +317,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.114/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
